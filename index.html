@@ -3,26 +3,79 @@
     <head>
         <meta charset="utf-8">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.5/tocas.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.5/tocas.min.css">
         <link rel="stylesheet" href="./asset/css/index.css">
     </head>
-    <body style="background-color: black;">
-        <div class="infos">
-            <h2>Project 2.</h2>
-            <h1>Memory<br>Game</h1>
-            <h3 class="status">Current Level</h3>
-        </div>
-        <div class="blocks">
-            <div class="row">
-                <div class="block block1">1</div>
-                <div class="block block2">2</div>
+    <body style="background-color: #7DC4FC;">
+        <div class="ts-grid">
+            <div class="column is-4-wide">
+                <div class="infos">
+                    <h1>Memory <br> Blocks</h1>
+                    <button class="ts-button" style="background-color: #7DC4FC; border-color: white;" onclick="game.showMessage(''); game.currentLevel=1; game.startLevel();$('#Continue').removeClass('has-hidden');if(game.currentLevel==1){$('#reset').text('Reset Game');}if(game.currentLevel==2){$('#reset').text('Start Game');game.currentLevel=1; };">
+                        <b id="reset">Start Game</b>
+                    </button><br><br>
+                    <button class="ts-button has-hidden" id="Continue" style="background-color: #7DC4FC; border-color: white;" onclick="game.showMessage(''); if(game.currentLevel<3){game.startLevel();}else{game.showMessage('Game Ended')}">
+                        <b>Continue Game</b>
+                    </button>
+                    <h3 class="levelstatus"> Game hasn't started. </h3>
+                    <h3 class="status"></h3>
+                </div>
             </div>
-            <div class="row">
-                <div class="block block3">3</div>
-                <div class="block block4">4</div>
+            <div class="column is-8-wide">
+                <div class="cards" id="easy-1">
+                    <div class="row"> 
+                        <div class="card card1 ts-image" onclick="game.userSendInput('1')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                        <div class="card card2 ts-image" onclick="game.userSendInput('2')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="card card3 ts-image" onclick="game.userSendInput('3')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                        <div class="card card4 ts-image" onclick="game.userSendInput('4')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="inputStatus"></div>
+                    </div>
+                </div>
+                <div class="cards has-hidden" id="easy-2">
+                    <div class="row"> 
+                        <div class="card card1 ts-image" onclick="game.userSendInput('1')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                        <div class="card card2 ts-image" onclick="game.userSendInput('2')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                        <div class="card card3 ts-image" onclick="game.userSendInput('3')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="card card4 ts-image" onclick="game.userSendInput('4')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                        <div class="card card5 ts-image" onclick="game.userSendInput('5')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                        <div class="card card6 ts-image" onclick="game.userSendInput('6')">
+                            <img src="./asset/img/pekora_card.png"></img>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="inputStatus"></div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="inputStatus">○○○○ </div>
-                <div class="clickTimes">0</div>
+            <div class="column is-4-wide">
+                <div class="ts-image">
+                    <img src="./asset/img/peko.png"></img>
+                </div>
             </div>
         </div>
         <script src="./asset/js/index.js"></script>
