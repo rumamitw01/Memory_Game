@@ -15,4 +15,4 @@
 我們參考了以下的資源，以實現這個遊戲：<br>
 - [TocasUI](https://github.com/teacat/tocas) - 以最快最直覺的方式，建構多樣的網站與漸進式網路應用程式介面，我們使用它來實現界面的設計，~~但願我們可以早日迎來2016年的春天~~。
 # License
-本專案使用 MIT License，請前往`LICENSE`來獲得更多資訊
+本專案使用 MIT License，請前往`LICENSE`來獲得更多資訊。
